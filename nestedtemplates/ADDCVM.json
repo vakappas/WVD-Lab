@@ -74,8 +74,8 @@
 		"diskName": "[concat(parameters('vmName'),'-disk')]",
 		"apiVersion": "2018-04-01",
         "nicTemplateUriHash": {
-            "yes": "[uri(deployment().properties.templateLink.uri, '/nestedtemplates/nic_NSG_noSLB_PIP_static.json')]",
-            "no": "[uri(deployment().properties.templateLink.uri, '/nestedtemplates/nic_noNSG_noSLB_noPIP_static.json')]"
+            "yes": "[uri(deployment().properties.templateLink.uri, 'nestedtemplates/nic_NSG_noSLB_PIP_static.json')]",
+            "no": "[uri(deployment().properties.templateLink.uri, 'nestedtemplates/nic_noNSG_noSLB_noPIP_static.json')]"
         },
         "nicTemplateURI": "[variables('nicTemplateUriHash')[parameters('createPip')]]",
         "skuDataTable": {
