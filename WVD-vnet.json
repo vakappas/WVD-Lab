@@ -223,7 +223,7 @@
         {
             "comments": "Optionally create VPN gateway, if createGw equals 'yes'",
             "condition": "[equals(parameters('createGw'), 'yes')]",
-			"name": "[concat(variables('vnetName'), 'VpnGw')]",
+			"name": "[concat(variables('vnetName'), '-VpnGw')]",
             "type": "Microsoft.Resources/deployments",
 			"apiVersion": "[variables('deploymentApiVersion')]",
 			"properties": {
@@ -248,7 +248,7 @@
         
 			"comments": "Create a pfSense VM as an NVA with 2nics and connect it to given vnet and subnets",
             "condition": "[equals(parameters('createNVA'), 'yes')]",
-			"name": "[variables('nvaName')]",
+			"name": "[parameters('nvaName')]",
             "type": "Microsoft.Resources/deployments",
 			"apiVersion": "[variables('deploymentApiVersion')]",
 			"properties": {
