@@ -23,7 +23,7 @@ $templateParameters = @{
 }
 
 
-New-AzResourceGroupDeployment -Name WVD -ResourceGroupName $RG -TemplateUri $url -TemplateParameterObject $templateParameters
+New-AzResourceGroupDeployment -Name WVD-LAb -ResourceGroupName $RG -TemplateUri $url -TemplateParameterObject $templateParameters
 Test-AzResourceGroupDeployment -ResourceGroupName $RG -TemplateParameterUri $url -TemplateParameterObject $templateParameters
 #connect to VM using RDP
     mstsc /v:((Get-AzPublicIpAddress -ResourceGroupName $rg).IpAddress)
