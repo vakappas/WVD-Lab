@@ -217,13 +217,13 @@
                 }
             },
             "dependsOn": [
-                "[parameters('vnetName')]"
+                "[variables('vnetName')]"
             ]
         },
         {
             "comments": "Optionally create VPN gateway, if createGw equals 'yes'",
             "condition": "[equals(parameters('createGw'), 'yes')]",
-			"name": "[concat(parameters('vnetName'), 'VpnGw')]",
+			"name": "[concat(variables('vnetName'), 'VpnGw')]",
             "type": "Microsoft.Resources/deployments",
 			"apiVersion": "[variables('deploymentApiVersion')]",
 			"properties": {
@@ -233,7 +233,7 @@
 					"contentVersion": "1.0.0.0"
 				},
 				"parameters": {
-                    "vnetName": { "value": "[parameters('vnetName')]" },
+                    "vnetName": { "value": "[variables('vnetName')]" },
                     "gwName": {"value": "[parameters('gwName')]"},
                     "PIPName": { "value": "[variables('gwPIPName')]" },
                     "enableBgp": { "value": "[parameters('enableBgp')]" }   
@@ -241,7 +241,7 @@
             },
             "dependsOn": [
                 "[variables('gwPIPName')]",
-                "[parameters('vnetName')]"                
+                "[variables('vnetName')]"                
             ]
         },
         {
@@ -261,7 +261,7 @@
                     "adminUsername": {"value": "[parameters('adminUsername')]"},
                     "adminPassword": {"value": "[parameters('adminPassword')]"},
                     "vmType": {"value": "[parameters('nvaType')]"},
-                    "vnetName": {"value": "[parameters('vnetName')]"},
+                    "vnetName": {"value": "[variables('vnetName')]"},
                     "subnet0Name": { "value": "[parameters('subnet1Name')]"},
                     "subnet1Name": { "value": "[parameters('subnet2Name')]"},
                     "ip0": {"value": "[parameters('nvaip0')]"},
@@ -272,7 +272,7 @@
                 }
             },
             "dependsOn": [
-                "[parameters('vnetName')]"
+                "[variables('vnetName')]"
             ]
         },
         {
