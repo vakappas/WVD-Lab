@@ -108,7 +108,7 @@
             "defaultValue": "Standard_D2s_v3"
         },
         "DCipAddress": {
-            "defaultValue": "10.0.0.1",
+            "defaultValue": "10.1.0.101",
             "type": "string"
         },
         "domainName": {
