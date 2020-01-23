@@ -33,7 +33,7 @@
             "metadata": {
                 "description": "The location of resources, such as templates and DSC modules, that the template depends on"
             },
-            "defaultValue": "https://github.com/vakappas/WVD-Lab/tree/master"
+            "defaultValue": "https://github.com/vakappas/WVD-Lab/tree/master/"
         },
         "_artifactsLocationSasToken": {
             "type": "securestring",
